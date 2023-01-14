@@ -6,6 +6,7 @@ from imports import *
 logging.info("Start application")
 
 application = Dash("Hot Sun", use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
+server = application.server
 
 navbar = dbc.NavbarSimple(
     children=[
@@ -27,4 +28,4 @@ application.layout = html.Div([navbar,
 ConfigGetter.load_data()
 
 if __name__ == '__main__':
-    application.run_server(debug=True)
+    application.run_server(debug=False)
